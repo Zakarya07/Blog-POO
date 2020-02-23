@@ -24,7 +24,7 @@ $id = $_GET['id'];
 /**
  * 3. Vérification de l'existence du commentaire
  */
-$commentaire= $model->find($id);
+$commentaire= $model->findOne($id);
 if (! $commentaire) {
     die("Aucun commentaire n'a l'identifiant $id !");
 }
