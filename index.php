@@ -8,9 +8,9 @@
          */
 
 
-require_once('controllers/Article.php');
+require_once('libraries/autoload.php');
 
-$controller = new Article();
+$controller = new \Controllers\Article();
 
 $controller->index();
 

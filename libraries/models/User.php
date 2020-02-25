@@ -2,7 +2,7 @@
 namespace Models;
 
 
-require_once("models/Model.php");
+require_once("libraries/models/Model.php");
 
 
 class User extends Model{
