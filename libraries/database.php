@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 class Database{
     
     // Retourne une connnexion à la base de données
