@@ -2,25 +2,17 @@
 
 namespace Controllers;
 
-        require_once("libraries/utils.php");
-        require_once("libraries/models/Article.php");
-        require_once("libraries/models/Comment.php");
-        require_once("libraries/controllers/Controller.php");
+   
 
  class Article extends Controller {
 
-            protected $model="\Models\Article";
+            protected $modelName="\Models\Article";
 
-            public function __construct(){
-                $this->model= new $this->model();
-            }
+         
 
             public function index(){
                     
                 
-
-
-
                     /**
                      * 2. Récupération des articles
                      */
@@ -31,12 +23,11 @@ namespace Controllers;
                      */
                     $pageTitle = "Accueil";
 
-                    renderPage('articles/index', compact('pageTitle', 'articles'));
+                    \Renderer::renderPage('articles/index', compact('pageTitle', 'articles'));
             }
 
             public function show(){
 
-                
                 
                 $commentModel= new \Models\Comment();
                 
@@ -73,7 +64,7 @@ namespace Controllers;
                  * 5. On affiche 
                  */
                 $pageTitle= $article['title'];
-                renderPage('articles/show',compact('pageTitle','article','commentaires','article_id'));
+                \Renderer::renderPage('articles/show',compact('pageTitle','article','commentaires','article_id'));
             }
 
             public function delete(){
@@ -108,7 +99,7 @@ namespace Controllers;
                 /**
                  * 5. Redirection vers la page d'accueil
                  */
-                redirect("index.php");
+                \Http::redirect("index.php");
             }
 
 }
